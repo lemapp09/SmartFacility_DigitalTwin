@@ -32,7 +32,7 @@ The project implements a full "Digital Thread"—a continuous flow of data from 
 
 * [x] **Repository Architecture:** Established modular folder structure for clean CI/CD iteration.
 * [x] **Environment Layout:** Modular office floorplan designed for system-wide asset tagging.
-* [ ] **Data Pipeline:** Integration of the MQTTnet library for C# telemetry polling.
+* [x] **Data Pipeline:** Integration of the MQTTnet library for C# telemetry polling.
 * [ ] **UI Dashboard:** Layout of the operational HUD using the Unity 6 **UI Toolkit**.
 
 ## 5. Professional Background
