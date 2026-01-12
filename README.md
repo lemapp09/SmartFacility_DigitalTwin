@@ -55,7 +55,13 @@ I am a published author on the **Unity 6 Engine** with a deep foundation in engi
   * **The Logic:** Performed a strategic downgrade to MQTTnet 4.3.7, which is the most stable version for.NET Standard 2.1 projects, ensuring full compatibility with Unity's IL2CPP and Mono backends.
   * **DevOps Proficiency:** Restored the project from a nested Git repository state on a Mac mini M4, establishing a clean "Digital Thread" baseline for iterative deployment.
 
-1. **Mac mini M4 & Apple Silicon Optimization**
+3. **Technical Adaptability: Multi-Platform Data Layer Management**
+
+  * **The Challenge:** Encountered "externally-managed-environment" protections and shell pathing conflicts (`zsh: command not found: pip`) while configuring the data generation layer on macOS Sequoia (M4 architecture).
+  * **The Engineering Logic:** Established a Python Virtual Environment (venv) to isolate simulation dependencies from the system interpreter, ensuring project reproducibility and portability. Proactively upgraded `pip` to v25.3 to leverage PEP 517/660 build standards and PEP 658 metadata efficiency, reducing dependency resolution overhead for the simulation stack.
+  * **Outcome:** Created a robust, decoupled **Data Generation Layer** using `smartbuildsim` that produces deterministic JSON telemetry for the MQTT "Digital Thread," ensuring the Unity 6 engine remains performant and isolated from backend scripting conflicts.
+
+4. **Mac mini M4 & Apple Silicon Optimization**
 
   * **Environment Management:** Optimized the asset pipeline for Apple Silicon (M4) by resolving Unity 6/Rosetta 2 package initialization quirks and ensuring NuGet.config files were correctly identified by the asset importer.
 
