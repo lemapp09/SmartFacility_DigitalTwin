@@ -1,0 +1,14 @@
+scenario: office-small
+determinism:
+  seed: 42
+paths:
+  output_dir:./sim_data
+  dataset:./sim_data/dataset.csv
+data:
+  days: 14  # Generates 2 weeks of telemetry
+  seed: 42
+models:
+  forecasting:
+    horizon: 2
+  anomaly:
+    contamination: 0.05

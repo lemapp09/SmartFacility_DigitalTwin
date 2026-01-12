@@ -1,0 +1,41 @@
+name: Downtown Office
+timezone: UTC
+zones:
+- name: Open Office
+  area_sq_m: 550.0
+  sensors:
+  - name: office_temp
+    type: temperature
+    unit: C
+    baseline: 0.0
+  - name: office_energy
+    type: energy
+    unit: kWh
+    baseline: 170.0
+  - name: cluster_energy
+    type: energy
+    unit: kWh
+    baseline: 150.0
+  - name: cluster_co2
+    type: co2
+    unit: ppm
+    baseline: 500.0
+- name: Conference
+  area_sq_m: 200.0
+  sensors:
+  - name: conference_temp
+    type: temperature
+    unit: C
+    baseline: 0.0
+  - name: conference_co2
+    type: co2
+    unit: ppm
+    baseline: 520.0
+  - name: cluster_energy
+    type: energy
+    unit: kWh
+    baseline: 150.0
+  - name: cluster_co2
+    type: co2
+    unit: ppm
+    baseline: 500.0

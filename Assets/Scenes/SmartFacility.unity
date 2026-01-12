@@ -8187,6 +8187,55 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!1 &1933864880
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1933864882}
+  - component: {fileID: 1933864881}
+  m_Layer: 0
+  m_Name: MQTT_Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1933864881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1933864880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b70f9ee2cef74f4da6284f0ad3310a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  brokerUrl: 42c5cfb619974a12bf9b24741db7e636.s1.eu.hivemq.cloud
+  port: 8883
+  username: facility_client
+  password: DY;6A@kmJmC&L^#
+  topic: facility/office/sensors
+--- !u!4 &1933864882
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1933864880}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.8583035, y: 7.126401, z: -15.464434}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1936283256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8655,3 +8704,4 @@ SceneRoots:
   - {fileID: 1425888833}
   - {fileID: 1746043050}
   - {fileID: 1792630207}
+  - {fileID: 1933864882}
