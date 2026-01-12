@@ -65,9 +65,21 @@ I am a published author on the **Unity 6 Engine** with a deep foundation in engi
 
   * **The Challenge:** Resolved a CLI `No such option` conflict by identifying a paradigm shift between initialization (flag-based) and generation (config-based) subcommands in `smartbuildsim`.
   * **The Engineering Logic:** Migrated generation parameters from ephemeral shell flags to a persistent `config.yaml` architecture. This ensures that the deterministic "Digital Thread" can be exactly replicated by any team member or recruiter using the same seed and schema settings.
-  * **Outcome:** Established a version-controlled data generation pipeline that produces 14 days of multi-variant building telemetry (HVAC, occupancy, energy), provi
+  * **Outcome:** Established a version-controlled data generation pipeline that produces 14 days of multi-variant building telemetry (HVAC, occupancy, energy), providing the necessary complexity for the Unity 6 operational dashboard.
 
-5. **Mac mini M4 & Apple Silicon Optimization**
+5. **System Architecture:** TLS-Secured Cloud Data Bridge
+
+  * **The Challenge:** Establishing a secure "Digital Thread" between a local Python 3.13 simulation and a cloud-based MQTT broker while adhering to modern Paho-MQTT 2.x callback architectures.
+  * **The Engineering Logic:** Implemented a decoupled bridge using `paho-mqtt` with TLS 1.2 encryption on port 8883. Utilized `CallbackAPIVersion.VERSION2` to ensure stability on the Python 3.13 runtime and mapped tabular CSV data to long-format JSON payloads for downstream C# ingestion.
+  * **Outcome:** Successfully synchronized the physical-layer simulation with a secure cloud backbone, enabling bidirectional data flow with 1-second reporting latency—the foundation for a Level 3 Predictive Twin.
+
+6. **Engineering Methodology:** Main-Thread Synchronization via Unity 6 Awaitables
+
+  * **The Challenge:** MQTT telemetry ingestion occurs on an asynchronous background thread, preventing direct interaction with Unity’s non-thread-safe engine APIs (UI, Transforms, Materials).
+  * **The Logic:** Leveraged the new Unity 6 `Awaitable.MainThreadAsync()` pattern within the `ApplicationMessageReceivedAsync` handler. This eliminates the need for legacy "Thread Dispatcher" queues and reduces context-switching overhead.
+  * **Outcome:** Established a high-performance, low-latency data bridge that allows live IoT JSON payloads to safely update the Digital Twin’s visual state without causing engine deadlocks or frame-rate stutter.
+
+7. **Mac mini M4 & Apple Silicon Optimization**
 
   * **Environment Management:** Optimized the asset pipeline for Apple Silicon (M4) by resolving Unity 6/Rosetta 2 package initialization quirks and ensuring NuGet.config files were correctly identified by the asset importer.
 
