@@ -1,14 +1,25 @@
-scenario: office-small
+scenario: project
 determinism:
   seed: 42
+
 paths:
-  output_dir:./sim_data
-  dataset:./sim_data/dataset.csv
+  output_dir: ./outputs
+  dataset: ./outputs/dataset.yaml
+
 data:
-  days: 14  # Generates 2 weeks of telemetry
-  seed: 42
+  days: 14
+  seed: 2024
+  freq_minutes: 30
+  trend_per_day: 0.15
+  seasonal_amplitude: 0.50
+  noise_scale: 0.08
+
 models:
   forecasting:
-    horizon: 2
+    horizon: 4
   anomaly:
     contamination: 0.05
+
+cluster:
+  sensors: []  # Will be populated based on your zones
+

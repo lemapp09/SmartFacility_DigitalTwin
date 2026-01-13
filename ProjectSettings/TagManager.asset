@@ -2,8 +2,57 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
-  tags: []
+  serializedVersion: 3
+  tags:
+  - door
+  - button f4
+  - button f5
+  - button f3
+  - button f2
+  - button f1
+  - button f6
+  - Zone_6A
+  - Zone_6B
+  - Zone_6C
+  - Zone_6D
+  - Zone_6E
+  - Zone_6F
+  - Zone_6G
+  - Zone_5A
+  - Zone_5B
+  - Zone_5C
+  - Zone_5D
+  - Zone_5E
+  - Zone_5F
+  - Zone_5G
+  - Zone_4A
+  - Zone_4B
+  - Zone_4C
+  - Zone_4D
+  - Zone_4E
+  - Zone_4F
+  - Zone_4G
+  - Zone_3A
+  - Zone_3B
+  - Zone_3C
+  - Zone_3D
+  - Zone_3E
+  - Zone_3F
+  - Zone_3G
+  - Zone_2A
+  - Zone_2B
+  - Zone_2C
+  - Zone_2D
+  - Zone_2E
+  - Zone_2F
+  - Zone_2G
+  - Zone_1A
+  - Zone_1B
+  - Zone_1C
+  - Zone_1D
+  - Zone_1E
+  - Zone_1F
+  - Zone_1G
   layers:
   - Default
   - TransparentFX
@@ -50,27 +99,3 @@ TagManager:
   - Light Layer 5
   - Light Layer 6
   - Light Layer 7
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 

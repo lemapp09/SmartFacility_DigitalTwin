@@ -1,41 +1,549 @@
-name: Downtown Office
-timezone: UTC
-zones:
-- name: Open Office
-  area_sq_m: 550.0
-  sensors:
-  - name: office_temp
-    type: temperature
-    unit: C
-    baseline: 0.0
-  - name: office_energy
-    type: energy
-    unit: kWh
-    baseline: 170.0
-  - name: cluster_energy
-    type: energy
-    unit: kWh
-    baseline: 150.0
-  - name: cluster_co2
-    type: co2
-    unit: ppm
-    baseline: 500.0
-- name: Conference
-  area_sq_m: 200.0
-  sensors:
-  - name: conference_temp
-    type: temperature
-    unit: C
-    baseline: 0.0
-  - name: conference_co2
-    type: co2
-    unit: ppm
-    baseline: 520.0
-  - name: cluster_energy
-    type: energy
-    unit: kWh
-    baseline: 150.0
-  - name: cluster_co2
-    type: co2
-    unit: ppm
-    baseline: 500.0
+building:
+  name: "Office Building - 42 Zones"
+  timezone: "America/New_York" 
+  zones:
+    - name: "Zone_1A"
+      area_sq_m: 100
+      sensors:
+        - name: "zone_1A_temp"
+          type: "temperature"
+          unit: "F"
+        - name: "zone_1A_energy"
+          type: "energy"
+          unit: "kWh"
+        - name: "zone_1A_co2"
+          type: "co2"
+          unit: "ppm"
+    
+    - name: "Zone_1B"
+      area_sq_m: 100
+      sensors:
+        - name: "zone_1B_temp"
+          type: "temperature"
+          unit: "F"
+        - name: "zone_1B_energy"
+          type: "energy"
+          unit: "kWh"
+        - name: "zone_1B_co2"
+          type: "co2"
+          unit: "ppm"
+
+    - name: "Zone_1C"
+      area_sq_m: 100
+      sensors:
+        - name: "zone_1C_temp"
+          type: "temperature"
+          unit: "F"
+        - name: "zone_1C_energy"
+          type: "energy"
+          unit: "kWh"
+        - name: "zone_1C_co2"
+          type: "co2"
+          unit: "ppm"
+    
+    - name: "Zone_1D"
+      area_sq_m: 100
+      sensors:
+        - name: "zone_1D_temp"
+          type: "temperature"
+          unit: "F"
+        - name: "zone_1D_energy"
+          type: "energy"
+          unit: "kWh"
+        - name: "zone_1D_co2"
+          type: "co2"
+          unit: "ppm"
+
+    - name: "Zone_1E"
+      area_sq_m: 100
+      sensors:
+        - name: "zone_1E_temp"
+          type: "temperature"
+          unit: "F"
+        - name: "zone_1E_energy"
+          type: "energy"
+          unit: "kWh"
+        - name: "zone_1E_co2"
+          type: "co2"
+          unit: "ppm"
+    
+    - name: "Zone_1F"
+      area_sq_m: 100
+      sensors:
+        - name: "zone_1F_temp"
+          type: "temperature"
+          unit: "F"
+        - name: "zone_1F_energy"
+          type: "energy"
+          unit: "kWh"
+        - name: "zone_1F_co2"
+          type: "co2"
+          unit: "ppm"
+
+    - name: "Zone_1G"
+      area_sq_m: 100
+      sensors:
+        - name: "zone_1G_temp"
+          type: "temperature"
+          unit: "F"
+        - name: "zone_1G_energy"
+          type: "energy"
+          unit: "kWh"
+        - name: "zone_1G_co2"
+          type: "co2"
+          unit: "ppm"
+
+    - name: "Zone_2A"
+      area_sq_m: 100
+      sensors:
+        - name: "zone_2A_temp"
+          type: "temperature"
+          unit: "F"
+        - name: "zone_2A_energy"
+          type: "energy"
+          unit: "kWh"
+        - name: "zone_2A_co2"
+          type: "co2"
+          unit: "ppm"
+    
+    - name: "Zone_2B"
+      area_sq_m: 100
+      sensors:
+        - name: "zone_2B_temp"
+          type: "temperature"
+          unit: "F"
+        - name: "zone_2B_energy"
+          type: "energy"
+          unit: "kWh"
+        - name: "zone_2B_co2"
+          type: "co2"
+          unit: "ppm"
+
+    - name: "Zone_2C"
+      area_sq_m: 100
+      sensors:
+        - name: "zone_2C_temp"
+          type: "temperature"
+          unit: "F"
+        - name: "zone_2C_energy"
+          type: "energy"
+          unit: "kWh"
+        - name: "zone_2C_co2"
+          type: "co2"
+          unit: "ppm"
+    
+    - name: "Zone_2D"
+      area_sq_m: 100
+      sensors:
+        - name: "zone_2D_temp"
+          type: "temperature"
+          unit: "F"
+        - name: "zone_2D_energy"
+          type: "energy"
+          unit: "kWh"
+        - name: "zone_2D_co2"
+          type: "co2"
+          unit: "ppm"
+
+    - name: "Zone_2E"
+      area_sq_m: 100
+      sensors:
+        - name: "zone_2E_temp"
+          type: "temperature"
+          unit: "F"
+        - name: "zone_2E_energy"
+          type: "energy"
+          unit: "kWh"
+        - name: "zone_2E_co2"
+          type: "co2"
+          unit: "ppm"
+    
+    - name: "Zone_2F"
+      area_sq_m: 100
+      sensors:
+        - name: "zone_2F_temp"
+          type: "temperature"
+          unit: "F"
+        - name: "zone_2F_energy"
+          type: "energy"
+          unit: "kWh"
+        - name: "zone_2F_co2"
+          type: "co2"
+          unit: "ppm"
+
+    - name: "Zone_2G"
+      area_sq_m: 100
+      sensors:
+        - name: "zone_2G_temp"
+          type: "temperature"
+          unit: "F"
+        - name: "zone_2G_energy"
+          type: "energy"
+          unit: "kWh"
+        - name: "zone_2G_co2"
+          type: "co2"
+          unit: "ppm"
+
+    - name: "Zone_3A"
+      area_sq_m: 100
+      sensors:
+        - name: "zone_3A_temp"
+          type: "temperature"
+          unit: "F"
+        - name: "zone_3A_energy"
+          type: "energy"
+          unit: "kWh"
+        - name: "zone_3A_co2"
+          type: "co2"
+          unit: "ppm"
+    
+    - name: "Zone_3B"
+      area_sq_m: 100
+      sensors:
+        - name: "zone_3B_temp"
+          type: "temperature"
+          unit: "F"
+        - name: "zone_3B_energy"
+          type: "energy"
+          unit: "kWh"
+        - name: "zone_3B_co2"
+          type: "co2"
+          unit: "ppm"
+
+    - name: "Zone_3C"
+      area_sq_m: 100
+      sensors:
+        - name: "zone_3C_temp"
+          type: "temperature"
+          unit: "F"
+        - name: "zone_3C_energy"
+          type: "energy"
+          unit: "kWh"
+        - name: "zone_3C_co2"
+          type: "co2"
+          unit: "ppm"
+    
+    - name: "Zone_3D"
+      area_sq_m: 100
+      sensors:
+        - name: "zone_3D_temp"
+          type: "temperature"
+          unit: "F"
+        - name: "zone_3D_energy"
+          type: "energy"
+          unit: "kWh"
+        - name: "zone_3D_co2"
+          type: "co2"
+          unit: "ppm"
+
+    - name: "Zone_3E"
+      area_sq_m: 100
+      sensors:
+        - name: "zone_3E_temp"
+          type: "temperature"
+          unit: "F"
+        - name: "zone_3E_energy"
+          type: "energy"
+          unit: "kWh"
+        - name: "zone_3E_co2"
+          type: "co2"
+          unit: "ppm"
+    
+    - name: "Zone_3F"
+      area_sq_m: 100
+      sensors:
+        - name: "zone_3F_temp"
+          type: "temperature"
+          unit: "F"
+        - name: "zone_3F_energy"
+          type: "energy"
+          unit: "kWh"
+        - name: "zone_3F_co2"
+          type: "co2"
+          unit: "ppm"
+
+    - name: "Zone_3G"
+      area_sq_m: 100
+      sensors:
+        - name: "zone_3G_temp"
+          type: "temperature"
+          unit: "F"
+        - name: "zone_3G_energy"
+          type: "energy"
+          unit: "kWh"
+        - name: "zone_3G_co2"
+          type: "co2"
+          unit: "ppm"
+
+    - name: "Zone_4A"
+      area_sq_m: 100
+      sensors:
+        - name: "zone_4A_temp"
+          type: "temperature"
+          unit: "F"
+        - name: "zone_4A_energy"
+          type: "energy"
+          unit: "kWh"
+        - name: "zone_4A_co2"
+          type: "co2"
+          unit: "ppm"
+    
+    - name: "Zone_4B"
+      area_sq_m: 100
+      sensors:
+        - name: "zone_4B_temp"
+          type: "temperature"
+          unit: "F"
+        - name: "zone_4B_energy"
+          type: "energy"
+          unit: "kWh"
+        - name: "zone_4B_co2"
+          type: "co2"
+          unit: "ppm"
+
+    - name: "Zone_4C"
+      area_sq_m: 100
+      sensors:
+        - name: "zone_4C_temp"
+          type: "temperature"
+          unit: "F"
+        - name: "zone_4C_energy"
+          type: "energy"
+          unit: "kWh"
+        - name: "zone_4C_co2"
+          type: "co2"
+          unit: "ppm"
+    
+    - name: "Zone_4D"
+      area_sq_m: 100
+      sensors:
+        - name: "zone_4D_temp"
+          type: "temperature"
+          unit: "F"
+        - name: "zone_4D_energy"
+          type: "energy"
+          unit: "kWh"
+        - name: "zone_4D_co2"
+          type: "co2"
+          unit: "ppm"
+
+    - name: "Zone_4E"
+      area_sq_m: 100
+      sensors:
+        - name: "zone_4E_temp"
+          type: "temperature"
+          unit: "F"
+        - name: "zone_4E_energy"
+          type: "energy"
+          unit: "kWh"
+        - name: "zone_4E_co2"
+          type: "co2"
+          unit: "ppm"
+    
+    - name: "Zone_4F"
+      area_sq_m: 100
+      sensors:
+        - name: "zone_4F_temp"
+          type: "temperature"
+          unit: "F"
+        - name: "zone_4F_energy"
+          type: "energy"
+          unit: "kWh"
+        - name: "zone_4F_co2"
+          type: "co2"
+          unit: "ppm"
+
+    - name: "Zone_4G"
+      area_sq_m: 100
+      sensors:
+        - name: "zone_4G_temp"
+          type: "temperature"
+          unit: "F"
+        - name: "zone_4G_energy"
+          type: "energy"
+          unit: "kWh"
+        - name: "zone_4G_co2"
+          type: "co2"
+          unit: "ppm"
+
+    - name: "Zone_5A"
+      area_sq_m: 100
+      sensors:
+        - name: "zone_5A_temp"
+          type: "temperature"
+          unit: "F"
+        - name: "zone_5A_energy"
+          type: "energy"
+          unit: "kWh"
+        - name: "zone_5A_co2"
+          type: "co2"
+          unit: "ppm"
+    
+    - name: "Zone_5B"
+      area_sq_m: 100
+      sensors:
+        - name: "zone_5B_temp"
+          type: "temperature"
+          unit: "F"
+        - name: "zone_5B_energy"
+          type: "energy"
+          unit: "kWh"
+        - name: "zone_5B_co2"
+          type: "co2"
+          unit: "ppm"
+
+    - name: "Zone_5C"
+      area_sq_m: 100
+      sensors:
+        - name: "zone_5C_temp"
+          type: "temperature"
+          unit: "F"
+        - name: "zone_5C_energy"
+          type: "energy"
+          unit: "kWh"
+        - name: "zone_5C_co2"
+          type: "co2"
+          unit: "ppm"
+    
+    - name: "Zone_5D"
+      area_sq_m: 100
+      sensors:
+        - name: "zone_5D_temp"
+          type: "temperature"
+          unit: "F"
+        - name: "zone_5D_energy"
+          type: "energy"
+          unit: "kWh"
+        - name: "zone_5D_co2"
+          type: "co2"
+          unit: "ppm"
+
+    - name: "Zone_5E"
+      area_sq_m: 100
+      sensors:
+        - name: "zone_5E_temp"
+          type: "temperature"
+          unit: "F"
+        - name: "zone_5E_energy"
+          type: "energy"
+          unit: "kWh"
+        - name: "zone_5E_co2"
+          type: "co2"
+          unit: "ppm"
+    
+    - name: "Zone_5F"
+      area_sq_m: 100
+      sensors:
+        - name: "zone_5F_temp"
+          type: "temperature"
+          unit: "F"
+        - name: "zone_5F_energy"
+          type: "energy"
+          unit: "kWh"
+        - name: "zone_5F_co2"
+          type: "co2"
+          unit: "ppm"
+
+    - name: "Zone_5G"
+      area_sq_m: 100
+      sensors:
+        - name: "zone_5G_temp"
+          type: "temperature"
+          unit: "F"
+        - name: "zone_5G_energy"
+          type: "energy"
+          unit: "kWh"
+        - name: "zone_5G_co2"
+          type: "co2"
+          unit: "ppm"
+
+    - name: "Zone_6A"
+      area_sq_m: 100
+      sensors:
+        - name: "zone_6A_temp"
+          type: "temperature"
+          unit: "F"
+        - name: "zone_6A_energy"
+          type: "energy"
+          unit: "kWh"
+        - name: "zone_6A_co2"
+          type: "co2"
+          unit: "ppm"
+    
+    - name: "Zone_6B"
+      area_sq_m: 100
+      sensors:
+        - name: "zone_6B_temp"
+          type: "temperature"
+          unit: "F"
+        - name: "zone_6B_energy"
+          type: "energy"
+          unit: "kWh"
+        - name: "zone_6B_co2"
+          type: "co2"
+          unit: "ppm"
+
+    - name: "Zone_6C"
+      area_sq_m: 100
+      sensors:
+        - name: "zone_6C_temp"
+          type: "temperature"
+          unit: "F"
+        - name: "zone_6C_energy"
+          type: "energy"
+          unit: "kWh"
+        - name: "zone_6C_co2"
+          type: "co2"
+          unit: "ppm"
+    
+    - name: "Zone_6D"
+      area_sq_m: 100
+      sensors:
+        - name: "zone_6D_temp"
+          type: "temperature"
+          unit: "F"
+        - name: "zone_6D_energy"
+          type: "energy"
+          unit: "kWh"
+        - name: "zone_6D_co2"
+          type: "co2"
+          unit: "ppm"
+
+    - name: "Zone_6E"
+      area_sq_m: 100
+      sensors:
+        - name: "zone_6E_temp"
+          type: "temperature"
+          unit: "F"
+        - name: "zone_6E_energy"
+          type: "energy"
+          unit: "kWh"
+        - name: "zone_6E_co2"
+          type: "co2"
+          unit: "ppm"
+    
+    - name: "Zone_6F"
+      area_sq_m: 100
+      sensors:
+        - name: "zone_6F_temp"
+          type: "temperature"
+          unit: "F"
+        - name: "zone_6F_energy"
+          type: "energy"
+          unit: "kWh"
+        - name: "zone_6F_co2"
+          type: "co2"
+          unit: "ppm"
+
+    - name: "Zone_6G"
+      area_sq_m: 100
+      sensors:
+        - name: "zone_6G_temp"
+          type: "temperature"
+          unit: "F"
+        - name: "zone_6G_energy"
+          type: "energy"
+          unit: "kWh"
+        - name: "zone_6G_co2"
+          type: "co2"
+          unit: "ppm"

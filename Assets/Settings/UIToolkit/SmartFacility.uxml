@@ -1,0 +1,8 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Settings/UIToolkit/SmartFacility.uss?fileID=7433441132597879392&amp;guid=80590c1da22b04d1498c8568eefd776e&amp;type=3#SmartFacility"/>
+    <ui:Label name="FacilityDisplay" text="Waiting for Data..." style="font-size: 72px;">
+        <Bindings>
+            <ui:DataBinding property="text" data-source-path="DisplayValue" binding-mode="ToTarget"/>
+        </Bindings>
+    </ui:Label>
+</ui:UXML>

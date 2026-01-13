@@ -1,21 +1,32 @@
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.UIElements;
 using MQTTnet;
 using MQTTnet.Client;
 
 public class FacilityMqttClient : MonoBehaviour
 {
-    private IMqttClient _mqttClient;
-    private MqttClientOptions _options;
-
-    // These credentials must match your HiveMQ Cloud Access Management settings
-   
-    public string brokerUrl = "your-cluster-id.s1.eu.hivemq.cloud";
-    public int port = 8883;
+    public UIDocument uiDocument;
+    public string brokerUrl = "42c5cfb619974a12bf9b24741db7e636.s1.eu.hivemq.cloud";
     public string username = "facility_client";
-    public string password = "your_password";
+    public string password = "DY;6A@kmJmC&L^#";
     public string topic = "facility/office/sensors";
+
+    // Performance Caching
+    private VisualElement _root;
+    private Label _displayLabel;
+    private IMqttClient _mqttClient;
+
+    void Awake()
+    {
+        // Cache UI elements once at initialization to avoid per-update overhead
+        if (uiDocument!= null)
+        {
+            _root = uiDocument.rootVisualElement;
+            _displayLabel = _root.Q<Label>("FacilityDisplay");
+        }
+    }
 
     async void Start()
     {
@@ -24,42 +35,32 @@ public class FacilityMqttClient : MonoBehaviour
 
     private async Task ConnectToBroker()
     {
-        Debug.Log("🔍 Attempting to initialize MQTT Client...");
         var factory = new MqttFactory();
         _mqttClient = factory.CreateMqttClient();
 
-        _options = new MqttClientOptionsBuilder()
-            .WithTcpServer(brokerUrl, port)
-            .WithCredentials(username, password)
-            .WithTls() 
-            .WithCleanSession()
-            .Build();
+        var options = new MqttClientOptionsBuilder()
+           .WithTcpServer(brokerUrl, 8883)
+           .WithCredentials(username, password)
+           .WithTlsOptions(o => 
+            {
+                // Correct Fluent API for MQTTnet 4.x validation bypass
+                o.WithCertificateValidationHandler(_ => true);
+            })
+           .WithCleanSession()
+           .Build();
 
         _mqttClient.ApplicationMessageReceivedAsync += OnMessageReceived;
-
-        try {
-            Debug.Log($"📡 Connecting to {brokerUrl}...");
-            var result = await _mqttClient.ConnectAsync(_options);
-        
-            // Log the specific ReasonCode from HiveMQ
-            Debug.Log($"✅ Connection Result: {result.ResultCode}"); 
-        
-            if (_mqttClient.IsConnected) {
-                await _mqttClient.SubscribeAsync(topic);
-                Debug.Log($"📝 Subscribed to topic: {topic}");
-            }
-        }
-        catch (System.Exception ex) {
-            // This will now capture TLS or credential errors
-            Debug.LogError($"❌ Connection Exception: {ex.GetType().Name} - {ex.Message}");
-        }
+        await _mqttClient.ConnectAsync(options);
+        await _mqttClient.SubscribeAsync(topic);
+        Debug.Log("✅ Digital Thread Live: Unity connected and subscribed.");
     }
 
     private async Task OnMessageReceived(MqttApplicationMessageReceivedEventArgs e)
     {
-        string payload = Encoding.UTF8.GetString(e.ApplicationMessage.Payload);
+        // Use PayloadSegment to minimize memory allocations and GC pressure
+        string payload = Encoding.UTF8.GetString(e.ApplicationMessage.PayloadSegment);
         
-        // CRITICAL: Move execution to the Main Thread for Unity 6
+        // Sync with Unity Main Thread using new Unity 6 Awaitables
         await Awaitable.MainThreadAsync();
         
         ProcessData(payload);
@@ -67,16 +68,21 @@ public class FacilityMqttClient : MonoBehaviour
 
     private void ProcessData(string json)
     {
-        // This is where you will parse the JSON and update the Digital Twin logic
-        Debug.Log($"Telemetry Received on Main Thread: {json}");
+        FacilityTelemetry newData = JsonUtility.FromJson<FacilityTelemetry>(json);
+
+        if (_displayLabel!= null)
+        {
+            // Procedural update: efficient, crash-proof, and easily debuggable
+            _displayLabel.text = $"{newData.sensor.ToUpper()}: {newData.value:F2} (Zone: {newData.zone})";
+        }
+
+        // Trigger Phase 4: Spatial alerts
+        // FindObjectOfType<FacilityZoneManager>().NotifyData(newData);
     }
 
     private async void OnApplicationQuit()
     {
         if (_mqttClient!= null && _mqttClient.IsConnected)
-        {
             await _mqttClient.DisconnectAsync();
-            Debug.Log("Gracefully disconnected from MQTT Broker.");
-        }
     }
 }
