@@ -77,6 +77,10 @@ VisualElement {
     margin-right: 5px;
     margin-bottom: 5px;
     margin-left: 5px;
+    transition-duration: 0.1s, 0.1s, 0.1s;
+    transition-timing-function: ease-out, ease-out, ease-out;
+    scale: 1;
+    transition-property: scale, border-color, border-width;
 }
 
 .shape-circle {
@@ -93,4 +97,13 @@ VisualElement {
     border-width: 0;
     background-image: url("project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=6936960519852013934&guid=33a1045a604074bc8a7a718a6191a87c&type=3#arrow-up@2x");
     background-size: 300% 300%;
+}
+
+.sensor-pulse {
+    scale: 1.6;
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+}
+
+.unlock-btn {
+    background-color: rgba(152, 197, 229, 0.41);
 }

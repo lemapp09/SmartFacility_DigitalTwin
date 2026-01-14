@@ -1,6 +1,6 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="project://database/Assets/Settings/UIToolkit/SmartFacility.uss?fileID=7433441132597879392&amp;guid=80590c1da22b04d1498c8568eefd776e&amp;type=3#SmartFacility"/>
-    <ui:Label name="FacilityDisplay" text="Waiting for Data..." style="font-size: 72px;"/>
+    <Style src="project://database/Assets/Settings/UIToolkit/SmartFacility.uss?fileID=7433441132597879392&amp;guid=80590c1da22b04d1498c8568eefd776e&amp;type=3"/>
+    <ui:Label name="FacilityDisplay" text="Waiting for Data..." style="font-size: 58px; width: 50%; background-color: rgb(94, 162, 229); top: 29px;"/>
     <ui:VisualElement name="MainContainer" class="main-container" style="left: 985px; top: -60px;">
         <ui:Label text="Sensor Data" name="Title" class="grid-title"/>
         <ui:VisualElement name="DataGrid" class="grid-body">
@@ -18,7 +18,7 @@
                 <ui:Label text="Floor 1" class="cell label-cell"/>
                 <ui:VisualElement name="F1_ZoneA" class="cell data-cell">
                     <ui:VisualElement style="flex-grow: 1;"/>
-                    <ui:VisualElement name="1A_Temp" tooltip="Temperature" class="sensor-shape shape-circle"/>
+                    <ui:VisualElement name="1A_Temp" tooltip="Temperature" enabled="true" class="sensor-shape shape-circle"/>
                     <ui:VisualElement name="1A_Power" tooltip="Power Usage" class="sensor-shape shape-square"/>
                     <ui:VisualElement name="1A_CO2" tooltip="CO2 Levels" class="sensor-shape shape-triangle"/>
                     <ui:VisualElement style="flex-grow: 1;"/>
@@ -349,4 +349,7 @@
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
+    <ui:Image name="ZoneCameraDisplay" style="width: 900px; height: 500px; left: 980px; bottom: 0; top: -35px; background-image: url(&quot;project://database/Assets/Graphics/Virtual%20Monitor.renderTexture?fileID=8400000&amp;guid=1132e218c34c94d85850bb875a865e9c&amp;type=2#Virtual Monitor&quot;);">
+        <ui:Button text="🔓 Resume Auto-Monitoring" name="UnlockCameraButton" class="unlock-btn" style="width: 33%; align-items: center; color: rgb(255, 255, 255); font-size: 20px; background-color: rgba(152, 197, 229, 0.84);"/>
+    </ui:Image>
 </ui:UXML>
