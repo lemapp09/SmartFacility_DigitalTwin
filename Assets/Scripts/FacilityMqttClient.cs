@@ -17,6 +17,8 @@ public class FacilityMqttClient : MonoBehaviour
     private VisualElement _root;
     private Label _displayLabel;
     private IMqttClient _mqttClient;
+    
+    public SensorDisplayManager displayManager; 
 
     void Awake()
     {
@@ -68,16 +70,37 @@ public class FacilityMqttClient : MonoBehaviour
 
     private void ProcessData(string json)
     {
+        // 1. Deserialize using your existing FacilityTelemetry model
         FacilityTelemetry newData = JsonUtility.FromJson<FacilityTelemetry>(json);
 
-        if (_displayLabel!= null)
+        // 2. Update the Label (FacilityDisplay) if it exists
+        if (_displayLabel != null)
         {
-            // Procedural update: efficient, crash-proof, and easily debuggable
-            _displayLabel.text = $"{newData.sensor.ToUpper()}: {newData.value:F2} (Zone: {newData.zone})";
+            _displayLabel.text = $"{newData.zone} | {newData.DisplayValue}";
         }
 
-        // Trigger Phase 4: Spatial alerts
-        // FindObjectOfType<FacilityZoneManager>().NotifyData(newData);
+        // 3. Coordinate Mapping (String Parsing)
+        // Extract Floor and Zone from newData.zone (e.g., "Zone_1A")
+        string zoneId = newData.zone.Replace("Zone_", ""); // Result: "1A"
+        int floorIndex = int.Parse(zoneId.Substring(0, 1)) - 1; // "1" -> 0
+        int zoneIndex = zoneId[1] - 'A'; // 'A' -> 0, 'B' -> 1...
+
+        // 4. Identify Sensor Type from the sensor string
+        // e.g., "zone_1A_temp" or "zone_1A_energy"
+        int typeIndex = -1;
+        string sensorType = "";
+
+        if (newData.sensor.Contains("temp")) { typeIndex = 0; sensorType = "temperature"; }
+        else if (newData.sensor.Contains("energy")) { typeIndex = 1; sensorType = "energy"; }
+        else if (newData.sensor.Contains("co2")) { typeIndex = 2; sensorType = "co2"; }
+
+        // 5. Update Visuals
+        if (typeIndex != -1 && displayManager != null)
+        {
+            // Update the 3D Matrix [Floor, Zone, Type]
+            Color statusColor = displayManager.GetStatusColor(newData.sensor, newData.value);
+            displayManager.UpdateSensorUI(floorIndex + 1, zoneIndex, typeIndex, statusColor);
+        }
     }
 
     private async void OnApplicationQuit()

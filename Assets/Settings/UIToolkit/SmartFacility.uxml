@@ -1,8 +1,352 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/Settings/UIToolkit/SmartFacility.uss?fileID=7433441132597879392&amp;guid=80590c1da22b04d1498c8568eefd776e&amp;type=3#SmartFacility"/>
-    <ui:Label name="FacilityDisplay" text="Waiting for Data..." style="font-size: 72px;">
-        <Bindings>
-            <ui:DataBinding property="text" data-source-path="DisplayValue" binding-mode="ToTarget"/>
-        </Bindings>
-    </ui:Label>
+    <ui:Label name="FacilityDisplay" text="Waiting for Data..." style="font-size: 72px;"/>
+    <ui:VisualElement name="MainContainer" class="main-container" style="left: 985px; top: -60px;">
+        <ui:Label text="Sensor Data" name="Title" class="grid-title"/>
+        <ui:VisualElement name="DataGrid" class="grid-body">
+            <ui:VisualElement name="ZoneLabels" class="grid-row header-row">
+                <ui:Label text="" class="cell label-cell"/>
+                <ui:Label text="Zone A" class="cell header-cell"/>
+                <ui:Label text="Zone B" class="cell header-cell"/>
+                <ui:Label text="Zone C" class="cell header-cell"/>
+                <ui:Label text="Zone D" class="cell header-cell"/>
+                <ui:Label text="Zone E" class="cell header-cell"/>
+                <ui:Label text="Zone F" class="cell header-cell"/>
+                <ui:Label text="Zone G" class="cell header-cell"/>
+            </ui:VisualElement>
+            <ui:VisualElement name="Floor1" class="grid-row">
+                <ui:Label text="Floor 1" class="cell label-cell"/>
+                <ui:VisualElement name="F1_ZoneA" class="cell data-cell">
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                    <ui:VisualElement name="1A_Temp" tooltip="Temperature" class="sensor-shape shape-circle"/>
+                    <ui:VisualElement name="1A_Power" tooltip="Power Usage" class="sensor-shape shape-square"/>
+                    <ui:VisualElement name="1A_CO2" tooltip="CO2 Levels" class="sensor-shape shape-triangle"/>
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                </ui:VisualElement>
+                <ui:VisualElement name="F1_ZoneB" class="cell data-cell" style="background-color: rgb(77, 77, 77);">
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                    <ui:VisualElement name="1B_Temp" tooltip="Temperature" class="sensor-shape shape-circle"/>
+                    <ui:VisualElement name="1B_Power" tooltip="Power Usage" class="sensor-shape shape-square"/>
+                    <ui:VisualElement name="1B_CO2" tooltip="CO2 Levels" class="sensor-shape shape-triangle"/>
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                </ui:VisualElement>
+                <ui:VisualElement name="F1_ZoneC" class="cell data-cell">
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                    <ui:VisualElement name="1C_Temp" tooltip="Temperature" class="sensor-shape shape-circle"/>
+                    <ui:VisualElement name="1C_Power" tooltip="Power Usage" class="sensor-shape shape-square"/>
+                    <ui:VisualElement name="1C_CO2" tooltip="CO2 Levels" class="sensor-shape shape-triangle"/>
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                </ui:VisualElement>
+                <ui:VisualElement name="F1_ZoneD" class="cell data-cell" style="background-color: rgb(77, 77, 77);">
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                    <ui:VisualElement name="1D_Temp" tooltip="Temperature" class="sensor-shape shape-circle"/>
+                    <ui:VisualElement name="1D_Power" tooltip="Power Usage" class="sensor-shape shape-square"/>
+                    <ui:VisualElement name="1D_CO2" tooltip="CO2 Levels" class="sensor-shape shape-triangle"/>
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                </ui:VisualElement>
+                <ui:VisualElement name="F1_ZoneE" class="cell data-cell">
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                    <ui:VisualElement name="1E_Temp" tooltip="Temperature" class="sensor-shape shape-circle"/>
+                    <ui:VisualElement name="1E_Power" tooltip="Power Usage" class="sensor-shape shape-square"/>
+                    <ui:VisualElement name="1E_CO2" tooltip="CO2 Levels" class="sensor-shape shape-triangle"/>
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                </ui:VisualElement>
+                <ui:VisualElement name="F1_ZoneF" class="cell data-cell" style="background-color: rgb(77, 77, 77);">
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                    <ui:VisualElement name="1F_Temp" tooltip="Temperature" class="sensor-shape shape-circle"/>
+                    <ui:VisualElement name="1F_Power" tooltip="Power Usage" class="sensor-shape shape-square"/>
+                    <ui:VisualElement name="1F_CO2" tooltip="CO2 Levels" class="sensor-shape shape-triangle"/>
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                </ui:VisualElement>
+                <ui:VisualElement name="F1_ZoneG" class="cell data-cell">
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                    <ui:VisualElement name="1G_Temp" tooltip="Temperature" class="sensor-shape shape-circle"/>
+                    <ui:VisualElement name="1G_Power" tooltip="Power Usage" class="sensor-shape shape-square"/>
+                    <ui:VisualElement name="1G_CO2" tooltip="CO2 Levels" class="sensor-shape shape-triangle"/>
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Floor2" class="grid-row">
+                <ui:Label text="Floor 2" class="cell label-cell"/>
+                <ui:VisualElement name="F2_ZoneA" class="cell data-cell" style="background-color: rgb(77, 77, 77);">
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                    <ui:VisualElement name="2A_Temp" tooltip="Temperature" class="sensor-shape shape-circle"/>
+                    <ui:VisualElement name="2A_Power" tooltip="Power Usage" class="sensor-shape shape-square"/>
+                    <ui:VisualElement name="2A_CO2" tooltip="CO2 Levels" class="sensor-shape shape-triangle"/>
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                </ui:VisualElement>
+                <ui:VisualElement name="F2_ZoneB" class="cell data-cell">
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                    <ui:VisualElement name="2B_Temp" tooltip="Temperature" class="sensor-shape shape-circle"/>
+                    <ui:VisualElement name="2B_Power" tooltip="Power Usage" class="sensor-shape shape-square"/>
+                    <ui:VisualElement name="2B_CO2" tooltip="CO2 Levels" class="sensor-shape shape-triangle"/>
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                </ui:VisualElement>
+                <ui:VisualElement name="F2_ZoneC" class="cell data-cell" style="background-color: rgb(77, 77, 77);">
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                    <ui:VisualElement name="2C_Temp" tooltip="Temperature" class="sensor-shape shape-circle"/>
+                    <ui:VisualElement name="2C_Power" tooltip="Power Usage" class="sensor-shape shape-square"/>
+                    <ui:VisualElement name="2C_CO2" tooltip="CO2 Levels" class="sensor-shape shape-triangle"/>
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                </ui:VisualElement>
+                <ui:VisualElement name="F2_ZoneD" class="cell data-cell">
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                    <ui:VisualElement name="2D_Temp" tooltip="Temperature" class="sensor-shape shape-circle"/>
+                    <ui:VisualElement name="2D_Power" tooltip="Power Usage" class="sensor-shape shape-square"/>
+                    <ui:VisualElement name="2D_CO2" tooltip="CO2 Levels" class="sensor-shape shape-triangle"/>
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                </ui:VisualElement>
+                <ui:VisualElement name="F2_ZoneE" class="cell data-cell" style="background-color: rgb(77, 77, 77);">
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                    <ui:VisualElement name="2E_Temp" tooltip="Temperature" class="sensor-shape shape-circle"/>
+                    <ui:VisualElement name="2E_Power" tooltip="Power Usage" class="sensor-shape shape-square"/>
+                    <ui:VisualElement name="2E_CO2" tooltip="CO2 Levels" class="sensor-shape shape-triangle"/>
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                </ui:VisualElement>
+                <ui:VisualElement name="F2_ZoneF" class="cell data-cell">
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                    <ui:VisualElement name="2F_Temp" tooltip="Temperature" class="sensor-shape shape-circle"/>
+                    <ui:VisualElement name="2F_Power" tooltip="Power Usage" class="sensor-shape shape-square"/>
+                    <ui:VisualElement name="2F_CO2" tooltip="CO2 Levels" class="sensor-shape shape-triangle"/>
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                </ui:VisualElement>
+                <ui:VisualElement name="F2_ZoneG" class="cell data-cell" style="background-color: rgb(77, 77, 77);">
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                    <ui:VisualElement name="2G_Temp" tooltip="Temperature" class="sensor-shape shape-circle"/>
+                    <ui:VisualElement name="2G_Power" tooltip="Power Usage" class="sensor-shape shape-square"/>
+                    <ui:VisualElement name="2G_CO2" tooltip="CO2 Levels" class="sensor-shape shape-triangle"/>
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Floor3" class="grid-row">
+                <ui:Label text="Floor 3" class="cell label-cell"/>
+                <ui:VisualElement name="F3_ZoneA" class="cell data-cell">
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                    <ui:VisualElement name="3A_Temp" tooltip="Temperature" class="sensor-shape shape-circle"/>
+                    <ui:VisualElement name="3A_Power" tooltip="Power Usage" class="sensor-shape shape-square"/>
+                    <ui:VisualElement name="3A_CO2" tooltip="CO2 Levels" class="sensor-shape shape-triangle"/>
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                </ui:VisualElement>
+                <ui:VisualElement name="F3_ZoneB" class="cell data-cell" style="background-color: rgb(77, 77, 77);">
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                    <ui:VisualElement name="3B_Temp" tooltip="Temperature" class="sensor-shape shape-circle"/>
+                    <ui:VisualElement name="3B_Power" tooltip="Power Usage" class="sensor-shape shape-square"/>
+                    <ui:VisualElement name="3B_CO2" tooltip="CO2 Levels" class="sensor-shape shape-triangle"/>
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                </ui:VisualElement>
+                <ui:VisualElement name="F3_ZoneC" class="cell data-cell">
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                    <ui:VisualElement name="3C_Temp" tooltip="Temperature" class="sensor-shape shape-circle"/>
+                    <ui:VisualElement name="3C_Power" tooltip="Power Usage" class="sensor-shape shape-square"/>
+                    <ui:VisualElement name="3C_CO2" tooltip="CO2 Levels" class="sensor-shape shape-triangle"/>
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                </ui:VisualElement>
+                <ui:VisualElement name="F3_ZoneD" class="cell data-cell" style="background-color: rgb(77, 77, 77);">
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                    <ui:VisualElement name="3D_Temp" tooltip="Temperature" class="sensor-shape shape-circle"/>
+                    <ui:VisualElement name="3D_Power" tooltip="Power Usage" class="sensor-shape shape-square"/>
+                    <ui:VisualElement name="3D_CO2" tooltip="CO2 Levels" class="sensor-shape shape-triangle"/>
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                </ui:VisualElement>
+                <ui:VisualElement name="F3_ZoneE" class="cell data-cell">
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                    <ui:VisualElement name="3E_Temp" tooltip="Temperature" class="sensor-shape shape-circle"/>
+                    <ui:VisualElement name="3E_Power" tooltip="Power Usage" class="sensor-shape shape-square"/>
+                    <ui:VisualElement name="3E_CO2" tooltip="CO2 Levels" class="sensor-shape shape-triangle"/>
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                </ui:VisualElement>
+                <ui:VisualElement name="F3_ZoneF" class="cell data-cell" style="background-color: rgb(77, 77, 77);">
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                    <ui:VisualElement name="3F_Temp" tooltip="Temperature" class="sensor-shape shape-circle"/>
+                    <ui:VisualElement name="3F_Power" tooltip="Power Usage" class="sensor-shape shape-square"/>
+                    <ui:VisualElement name="3F_CO2" tooltip="CO2 Levels" class="sensor-shape shape-triangle"/>
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                </ui:VisualElement>
+                <ui:VisualElement name="F3_ZoneG" class="cell data-cell">
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                    <ui:VisualElement name="3G_Temp" tooltip="Temperature" class="sensor-shape shape-circle"/>
+                    <ui:VisualElement name="3G_Power" tooltip="Power Usage" class="sensor-shape shape-square"/>
+                    <ui:VisualElement name="3G_CO2" tooltip="CO2 Levels" class="sensor-shape shape-triangle"/>
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Floor4" class="grid-row">
+                <ui:Label text="Floor 4" class="cell label-cell"/>
+                <ui:VisualElement name="F4_ZoneA" class="cell data-cell" style="background-color: rgb(77, 77, 77);">
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                    <ui:VisualElement name="4A_Temp" tooltip="Temperature" class="sensor-shape shape-circle"/>
+                    <ui:VisualElement name="4A_Power" tooltip="Power Usage" class="sensor-shape shape-square"/>
+                    <ui:VisualElement name="4A_CO2" tooltip="CO2 Levels" class="sensor-shape shape-triangle"/>
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                </ui:VisualElement>
+                <ui:VisualElement name="F4_ZoneB" class="cell data-cell">
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                    <ui:VisualElement name="4B_Temp" tooltip="Temperature" class="sensor-shape shape-circle"/>
+                    <ui:VisualElement name="4B_Power" tooltip="Power Usage" class="sensor-shape shape-square"/>
+                    <ui:VisualElement name="4B_CO2" tooltip="CO2 Levels" class="sensor-shape shape-triangle"/>
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                </ui:VisualElement>
+                <ui:VisualElement name="F4_ZoneC" class="cell data-cell" style="background-color: rgb(77, 77, 77);">
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                    <ui:VisualElement name="4C_Temp" tooltip="Temperature" class="sensor-shape shape-circle"/>
+                    <ui:VisualElement name="4C_Power" tooltip="Power Usage" class="sensor-shape shape-square"/>
+                    <ui:VisualElement name="4C_CO2" tooltip="CO2 Levels" class="sensor-shape shape-triangle"/>
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                </ui:VisualElement>
+                <ui:VisualElement name="F4_ZoneD" class="cell data-cell">
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                    <ui:VisualElement name="4D_Temp" tooltip="Temperature" class="sensor-shape shape-circle"/>
+                    <ui:VisualElement name="4D_Power" tooltip="Power Usage" class="sensor-shape shape-square"/>
+                    <ui:VisualElement name="4D_CO2" tooltip="CO2 Levels" class="sensor-shape shape-triangle"/>
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                </ui:VisualElement>
+                <ui:VisualElement name="F4_ZoneE" class="cell data-cell" style="background-color: rgb(77, 77, 77);">
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                    <ui:VisualElement name="4E_Temp" tooltip="Temperature" class="sensor-shape shape-circle"/>
+                    <ui:VisualElement name="4E_Power" tooltip="Power Usage" class="sensor-shape shape-square"/>
+                    <ui:VisualElement name="4E_CO2" tooltip="CO2 Levels" class="sensor-shape shape-triangle"/>
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                </ui:VisualElement>
+                <ui:VisualElement name="F4_ZoneF" class="cell data-cell">
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                    <ui:VisualElement name="4F_Temp" tooltip="Temperature" class="sensor-shape shape-circle"/>
+                    <ui:VisualElement name="4F_Power" tooltip="Power Usage" class="sensor-shape shape-square"/>
+                    <ui:VisualElement name="4F_CO2" tooltip="CO2 Levels" class="sensor-shape shape-triangle"/>
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                </ui:VisualElement>
+                <ui:VisualElement name="F4_ZoneG" class="cell data-cell" style="background-color: rgb(77, 77, 77);">
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                    <ui:VisualElement name="4G_Temp" tooltip="Temperature" class="sensor-shape shape-circle"/>
+                    <ui:VisualElement name="4G_Power" tooltip="Power Usage" class="sensor-shape shape-square"/>
+                    <ui:VisualElement name="4G_CO2" tooltip="CO2 Levels" class="sensor-shape shape-triangle"/>
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Floor5" class="grid-row">
+                <ui:Label text="Floor 5" class="cell label-cell"/>
+                <ui:VisualElement name="F5_ZoneA" class="cell data-cell">
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                    <ui:VisualElement name="5A_Temp" tooltip="Temperature" class="sensor-shape shape-circle"/>
+                    <ui:VisualElement name="5A_Power" tooltip="Power Usage" class="sensor-shape shape-square"/>
+                    <ui:VisualElement name="5A_CO2" tooltip="CO2 Levels" class="sensor-shape shape-triangle"/>
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                </ui:VisualElement>
+                <ui:VisualElement name="F5_ZoneB" class="cell data-cell" style="background-color: rgb(77, 77, 77);">
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                    <ui:VisualElement name="5B_Temp" tooltip="Temperature" class="sensor-shape shape-circle"/>
+                    <ui:VisualElement name="5B_Power" tooltip="Power Usage" class="sensor-shape shape-square"/>
+                    <ui:VisualElement name="5B_CO2" tooltip="CO2 Levels" class="sensor-shape shape-triangle"/>
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                </ui:VisualElement>
+                <ui:VisualElement name="F5_ZoneC" class="cell data-cell">
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                    <ui:VisualElement name="5C_Temp" tooltip="Temperature" class="sensor-shape shape-circle"/>
+                    <ui:VisualElement name="5C_Power" tooltip="Power Usage" class="sensor-shape shape-square"/>
+                    <ui:VisualElement name="5C_CO2" tooltip="CO2 Levels" class="sensor-shape shape-triangle"/>
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                </ui:VisualElement>
+                <ui:VisualElement name="F5_ZoneD" class="cell data-cell" style="background-color: rgb(77, 77, 77);">
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                    <ui:VisualElement name="5D_Temp" tooltip="Temperature" class="sensor-shape shape-circle"/>
+                    <ui:VisualElement name="5D_Power" tooltip="Power Usage" class="sensor-shape shape-square"/>
+                    <ui:VisualElement name="5D_CO2" tooltip="CO2 Levels" class="sensor-shape shape-triangle"/>
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                </ui:VisualElement>
+                <ui:VisualElement name="F5_ZoneE" class="cell data-cell">
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                    <ui:VisualElement name="5E_Temp" tooltip="Temperature" class="sensor-shape shape-circle"/>
+                    <ui:VisualElement name="5E_Power" tooltip="Power Usage" class="sensor-shape shape-square"/>
+                    <ui:VisualElement name="5E_CO2" tooltip="CO2 Levels" class="sensor-shape shape-triangle"/>
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                </ui:VisualElement>
+                <ui:VisualElement name="F5_ZoneF" class="cell data-cell" style="background-color: rgb(77, 77, 77);">
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                    <ui:VisualElement name="5F_Temp" tooltip="Temperature" class="sensor-shape shape-circle"/>
+                    <ui:VisualElement name="5F_Power" tooltip="Power Usage" class="sensor-shape shape-square"/>
+                    <ui:VisualElement name="5F_CO2" tooltip="CO2 Levels" class="sensor-shape shape-triangle"/>
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                </ui:VisualElement>
+                <ui:VisualElement name="F5_ZoneG" class="cell data-cell">
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                    <ui:VisualElement name="5G_Temp" tooltip="Temperature" class="sensor-shape shape-circle"/>
+                    <ui:VisualElement name="5G_Power" tooltip="Power Usage" class="sensor-shape shape-square"/>
+                    <ui:VisualElement name="5G_CO2" tooltip="CO2 Levels" class="sensor-shape shape-triangle"/>
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Floor6" class="grid-row">
+                <ui:Label text="Floor 6" class="cell label-cell"/>
+                <ui:VisualElement name="F6_ZoneA" class="cell data-cell" style="background-color: rgb(77, 77, 77);">
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                    <ui:VisualElement name="6A_Temp" tooltip="Temperature" class="sensor-shape shape-circle"/>
+                    <ui:VisualElement name="6A_Power" tooltip="Power Usage" class="sensor-shape shape-square"/>
+                    <ui:VisualElement name="6A_CO2" tooltip="CO2 Levels" class="sensor-shape shape-triangle"/>
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                </ui:VisualElement>
+                <ui:VisualElement name="F6_ZoneB" class="cell data-cell">
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                    <ui:VisualElement name="6B_Temp" tooltip="Temperature" class="sensor-shape shape-circle"/>
+                    <ui:VisualElement name="6B_Power" tooltip="Power Usage" class="sensor-shape shape-square"/>
+                    <ui:VisualElement name="6B_CO2" tooltip="CO2 Levels" class="sensor-shape shape-triangle"/>
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                </ui:VisualElement>
+                <ui:VisualElement name="F6_ZoneC" class="cell data-cell" style="background-color: rgb(77, 77, 77);">
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                    <ui:VisualElement name="6C_Temp" tooltip="Temperature" class="sensor-shape shape-circle"/>
+                    <ui:VisualElement name="6C_Power" tooltip="Power Usage" class="sensor-shape shape-square"/>
+                    <ui:VisualElement name="6C_CO2" tooltip="CO2 Levels" class="sensor-shape shape-triangle"/>
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                </ui:VisualElement>
+                <ui:VisualElement name="F6_ZoneD" class="cell data-cell">
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                    <ui:VisualElement name="6D_Temp" tooltip="Temperature" class="sensor-shape shape-circle"/>
+                    <ui:VisualElement name="6D_Power" tooltip="Power Usage" class="sensor-shape shape-square"/>
+                    <ui:VisualElement name="6D_CO2" tooltip="CO2 Levels" class="sensor-shape shape-triangle"/>
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                </ui:VisualElement>
+                <ui:VisualElement name="F6_ZoneE" class="cell data-cell" style="background-color: rgb(77, 77, 77);">
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                    <ui:VisualElement name="6E_Temp" tooltip="Temperature" class="sensor-shape shape-circle"/>
+                    <ui:VisualElement name="6E_Power" tooltip="Power Usage" class="sensor-shape shape-square"/>
+                    <ui:VisualElement name="6E_CO2" tooltip="CO2 Levels" class="sensor-shape shape-triangle"/>
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                </ui:VisualElement>
+                <ui:VisualElement name="F6_ZoneF" class="cell data-cell">
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                    <ui:VisualElement name="6F_Temp" tooltip="Temperature" class="sensor-shape shape-circle"/>
+                    <ui:VisualElement name="6F_Power" tooltip="Power Usage" class="sensor-shape shape-square"/>
+                    <ui:VisualElement name="6F_CO2" tooltip="CO2 Levels" class="sensor-shape shape-triangle"/>
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                </ui:VisualElement>
+                <ui:VisualElement name="F6_ZoneG" class="cell data-cell" style="background-color: rgb(77, 77, 77);">
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                    <ui:VisualElement name="6G_Temp" tooltip="Temperature" class="sensor-shape shape-circle"/>
+                    <ui:VisualElement name="6G_Power" tooltip="Power Usage" class="sensor-shape shape-square"/>
+                    <ui:VisualElement name="6G_CO2" tooltip="CO2 Levels" class="sensor-shape shape-triangle"/>
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Legend" class="grid-row">
+                <ui:Label text="Legend" double-click-selects-word="false" class="cell label-cell"/>
+                <ui:VisualElement name="F6_ZoneA" class="cell data-cell">
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                    <ui:VisualElement name="6A_Temp" tooltip="Temperature" class="sensor-shape shape-circle"/>
+                    <ui:Label text="- Temperature" name="Label" style="color: rgb(255, 255, 255);"/>
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                </ui:VisualElement>
+                <ui:VisualElement name="F6_ZoneB" class="cell data-cell">
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                    <ui:VisualElement name="6B_Power" tooltip="Power Usage" class="sensor-shape shape-square"/>
+                    <ui:Label text="- Power" name="Label" style="color: rgb(255, 255, 255);"/>
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                </ui:VisualElement>
+                <ui:VisualElement name="F6_ZoneC" class="cell data-cell">
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                    <ui:VisualElement name="6C_CO2" tooltip="CO2 Levels" class="sensor-shape shape-triangle"/>
+                    <ui:Label text="- CO2" name="Label" style="color: rgb(255, 255, 255);"/>
+                    <ui:VisualElement style="flex-grow: 1;"/>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
 </ui:UXML>
